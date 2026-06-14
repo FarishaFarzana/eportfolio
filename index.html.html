@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nur Farisha Farzana | e-Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background-color: #f5fafd;
+            color: #031b2f;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        /* sticky navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0a2f44;   /* deep blue */
+            backdrop-filter: blur(0px);
+            box-shadow: 0 6px 14px rgba(0, 20, 30, 0.12);
+            width: 100%;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 0.8rem 1.8rem;
+            gap: 1rem;
+        }
+
+        .nav-container a {
+            color: #eef6fc;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 40px;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-container a:hover {
+            background: #2c6e9e;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* main containers */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.8rem;
+        }
+
+        section {
+            scroll-margin-top: 85px;
+            margin-bottom: 3rem;
+        }
+
+        /* hero / intro card */
+        .hero {
+            background: linear-gradient(135deg, #eef6fc 0%, #d9e9f5 100%);
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            margin-bottom: 2rem;
+            border-left: 6px solid #0f5b8c;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+        }
+
+        .sdg-badge {
+            display: inline-block;
+            background: #0a2f44;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #043753;
+            margin: 0.5rem 0 0.3rem;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            border-left: 5px solid #0f5b8c;
+            padding-left: 1rem;
+            margin: 1.5rem 0 1.5rem 0;
+            color: #053e5c;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #0e4b70;
+            margin: 0.5rem 0;
+        }
+
+        /* card grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e2edf2;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(2, 65, 96, 0.2);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .card-content {
+            padding: 1.4rem 1.5rem 1.8rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #023b57;
+        }
+
+        .card-desc {
+            color: #2c536e;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .reflection {
+            background: #f0f7fc;
+            padding: 0.8rem 1rem;
+            border-radius: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid #3182b3;
+            color: #1a4c6e;
+        }
+
+        .btn-code {
+            background: #0c6b9e;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: fit-content;
+            margin-top: 0.5rem;
+            transition: background 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .btn-code:hover {
+            background: #04537c;
+            text-decoration: none;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, #caddf0, transparent);
+        }
+
+        footer {
+            background: #0a2f44;
+            color: #cfe2ef;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        .skills-list, .resources-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 0.8rem;
+        }
+
+        .skill-tag {
+            background: #ddeeff;
+            color: #043c5a;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .resource-tag {
+            background: #eef2f6;
+            color: #0e4f73;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 700px) {
+            .nav-container a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.6rem;
+            }
+            .container {
+                padding: 1.2rem 1rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="sticky-nav">
+        <nav class="nav-container">
+            <a href="#home">Home</a>
+            <a href="#labs">Labs</a>
+            <a href="#projects">Projects</a>
+            <a href="#reflection">Reflection</a>
+            <a href="#skills">Skills</a>
+            <a href="#resources">Resources</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <!-- HOME section -->
+        <section id="home">
+            <div class="hero">
+                <span class="sdg-badge">📘 SDG 4 · Quality Education</span>
+                <h1>NUR FARISHA FARZANA BINTI ABDUL KARIM</h1>
+                <p style="font-size: 1.15rem; margin: 0.2rem 0 0.6rem;"><strong>Software Engineering</strong> | Matric: A210684 | Instructor: DR NELSON</p>
+                <p style="margin-top: 0.8rem;">I am a Software Engineering student passionate about mobile application development. Through this course, I aim to build practical, user-friendly apps that solve real-world problems. <strong>StudyFlow</strong> represents my journey in learning how technology can support education and make studying more organized and collaborative.</p>
+                <div style="margin-top: 1rem; background: #ffffffcc; padding: 0.8rem 1rem; border-radius: 1rem;">
+                    <strong>🌍 Why SDG 4 matters in my work:</strong> Quality education empowers students with the tools they need to learn effectively, and technology can make learning resources accessible to everyone, anywhere.
+                </div>
+            </div>
+        </section>
+
+        <!-- LABS section -->
+        <section id="labs">
+            <h2>📱 Labs & Foundations</h2>
+            <div class="cards-grid">
+                <!-- Lab 1 -->
+                <div class="card">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/kU2Hd5Qc56w" title="Lab 1 UI Basics" allowfullscreen></iframe></div>
+                    <div class="card-content">
+                        <div class="card-title">Lab 1 · UI Basics</div>
+                        <div class="card-desc">Jetpack Compose fundamentals & layout structures (Column, Row, Box).</div>
+                        <div class="reflection"><strong>📝 Reflection:</strong> This lab introduced me to Jetpack Compose basics and building user interfaces. I learned how to structure layouts using Column, Row, and Box, and how Material Design components create a professional look. This foundation was essential for all subsequent labs.</div>
+                    </div>
+                </div>
+                <!-- Lab 2 -->
+                <div class="card">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Ijeuhda-GTI" title="Lab 2 Interaction" allowfullscreen></iframe></div>
+                    <div class="card-content">
+                        <div class="card-title">Lab 2 · Interaction & State</div>
+                        <div class="card-desc">User interactions: clicks, text input, remember / mutableStateOf.</div>
+                        <div class="reflection"><strong>📝 Reflection:</strong> I learned how to handle user interactions like button clicks and text input. Understanding state management with remember and mutableStateOf was a key milestone. This lab taught me how to make apps responsive to user actions.</div>
+                    </div>
+                </div>
+                <!-- Lab 3 -->
+                <div class="card">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZV3t6e8EKUk" title="Lab 3 Material Design" allowfullscreen></iframe></div>
+                    <div class="card-content">
+                        <div class="card-title">Lab 3 · Material Design</div>
+                        <div class="card-desc">Theming, colour schemes, typography, shapes, and polished UI.</div>
+                        <div class="reflection"><strong>📝 Reflection:</strong> This lab focused on applying Material Design principles for a consistent and beautiful UI. I worked with color schemes, typography, shapes, and theming to create a visually appealing app that follows design guidelines.</div>
+                    </div>
+                </div>
+                <!-- Lab 4 -->
+                <div class="card">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/qnk7dGhrRtg" title="Lab 4 Navigation Compose" allowfullscreen></iframe></div>
+                    <div class="card-content">
+                        <div class="card-title">Lab 4 · Navigation</div>
+                        <div class="card-desc">Multi-screen apps: NavHost, routes, passing data between screens.</div>
+                        <div class="reflection"><strong>📝 Reflection:</strong> Navigation Compose was introduced in this lab, allowing me to create multi-screen apps. I learned about NavHost, routes, and passing data between screens. This was crucial for building StudyFlow's screen flow.</div>
+                    </div>
+                </div>
+                <!-- Lab 5 -->
+                <div class="card">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/K7RIEx3jQME" title="Lab 5 Room Database" allowfullscreen></iframe></div>
+                    <div class="card-content">
+                        <div class="card-title">Lab 5 · Room Database</div>
+                        <div class="card-desc">Local data persistence, SharedPreferences, offline storage.</div>
+                        <div class="reflection"><strong>📝 Reflection:</strong> I implemented local data persistence using Room Database and SharedPreferences. Learning how to store and retrieve data permanently was challenging but rewarding. This lab taught me the importance of offline-accessible data.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS section with code buttons -->
+        <section id="projects">
+            <h2>🚀 Projects · StudyFlow & StudyFlow Pro</h2>
+            <div class="cards-grid">
+                <!-- Project 1 -->
+                <div class="card">
+                    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/sQsODddfel4" title="StudyFlow Note Taking App" allowfullscreen></iframe></div>
+                    <div class="card-content">
+                        <div class="card-title">📒 StudyFlow · Note Taking App</div>
+                        <div class="card-desc"><strong>Problem:</strong> Students struggle with disorganized materials. StudyFlow helps capture & organize learning notes.</div>
+                        <div class="reflection"><strong>✨ Lessons learned:</strong> I learned how to build a complete multi-screen app with Navigation Compose and shared ViewModel state. Managing state across screens and implementing CRUD operations were key takeaways. This project strengthened my understanding of MVVM architecture.</div>
+                        <a href="https://drive.google.com/drive/folders/1H2mN75trNdItjamoF3zf6u1pCmdd0ijy" target="_blank" rel="noopener noreferrer" class="btn-code">📂 View Code (Google Drive)</a>
+                    </div>
+                </div>
+                <!-- Project 2 with updated code link -->
+                <div class="card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/?controls=0" title="Pending video" style="opacity:0.4;" allowfullscreen></iframe>
+                        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:#000000aa; color:white; padding:4px 12px; border-radius: 40px; font-size:0.8rem;">VSR Preview Pending</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">⭐ StudyFlow Pro · API + Sensors + Cloud</div>
+                        <div class="card-desc"><strong>Problem:</strong> Students need dictionary API, collaborative tools, study spot finder. Pro expands with Firebase & GPS.</div>
+                        <div class="reflection"><strong>✨ Lessons learned:</strong> Integrating Firebase, Retrofit API, and GPS sensor taught me how to connect apps to external services. I learned cloud database management, REST API consumption, and hardware sensor integration. The most valuable lesson was debugging and persisting through technical challenges.</div>
+                        <!-- Updated working Google Drive link for Project 2 -->
+                        <a href="https://drive.google.com/drive/folders/1Aej3Ij2Z1sXiVavrTKaSOXgm1RUJo-3v?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-code">📂 View Code (Project 2 · Google Drive)</a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 0.8rem; background:#eef3fa; border-radius: 1rem; padding: 1rem;">
+                <p><strong>🎥 Project 2 VSR:</strong> YouTube walkthrough link pending — final demo showcases dictionary API, community sharing via Firebase, and GPS-based study spot discovery. Code repository is now fully accessible via the button above.</p>
+            </div>
+        </section>
+
+        <!-- REFLECTION & LEARNING JOURNEY -->
+        <section id="reflection">
+            <h2>📖 Reflection & Learning Journey</h2>
+            <div style="background: white; border-radius: 1.5rem; padding: 1.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                <p style="font-size: 1.05rem;">Starting from <strong>Lab 1</strong> with basic UI layouts to <strong>Project 2</strong> with cloud integration and sensors, my growth has been tremendous. I went from knowing nothing about mobile development to building a fully functional app with 9 screens. The biggest challenges were Room Database setup and Firebase integration, but overcoming them built my confidence. I now feel ready to develop real-world Android applications that can make a positive impact for <strong>Quality Education (SDG 4)</strong>.</p>
+                <hr>
+                <p style="font-style: italic;">"Technology and education go hand in hand — StudyFlow demonstrates how well-designed apps can foster organized learning and accessible knowledge."</p>
+            </div>
+        </section>
+
+        <!-- SKILLS section -->
+        <section id="skills">
+            <h2>⚙️ Skills & Tech Stack</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Kotlin</span><span class="skill-tag">Jetpack Compose</span><span class="skill-tag">Navigation Compose</span><span class="skill-tag">ViewModel</span>
+                <span class="skill-tag">StateFlow</span><span class="skill-tag">Retrofit</span><span class="skill-tag">Firebase Firestore</span><span class="skill-tag">GPS / FusedLocationProvider</span>
+                <span class="skill-tag">SharedPreferences</span><span class="skill-tag">Material3</span><span class="skill-tag">Dictionary API</span><span class="skill-tag">Room Database</span>
+                <span class="skill-tag">MVVM Architecture</span><span class="skill-tag">REST APIs</span>
+            </div>
+        </section>
+
+        <!-- RESOURCES section -->
+        <section id="resources">
+            <h2>📚 Resources & Acknowledgements</h2>
+            <div class="resources-list">
+                <span class="resource-tag">📖 Dictionary API (api.dictionaryapi.dev)</span>
+                <span class="resource-tag">🔥 Firebase Firestore</span>
+                <span class="resource-tag">📍 Google Location Services</span>
+                <span class="resource-tag">📡 Retrofit + Gson</span>
+                <span class="resource-tag">🎨 Material Icons Extended</span>
+                <span class="resource-tag">🤖 AI assistance (Claude) for code generation, debugging & documentation</span>
+            </div>
+            <p style="margin-top: 1.2rem;">Special thanks to my instructor <strong>DR NELSON</strong> for guidance throughout the Software Engineering course. All embedded YouTube videos are used for educational portfolio demonstration purposes.</p>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 Nur Farisha Farzana Binti Abdul Karim | Matric: A210684 | Software Engineering Portfolio</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">💙 Quality Education — SDG 4 | Built with modern HTML/CSS, responsive design</p>
+</footer>
+
+</body>
+</html>
