@@ -19,15 +19,13 @@
             line-height: 1.5;
         }
 
-        /* sticky navigation */
         .sticky-nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: #0a2f44;   /* deep blue */
-            backdrop-filter: blur(0px);
-            box-shadow: 0 6px 14px rgba(0, 20, 30, 0.12);
+            background: #0a2f44;
             width: 100%;
+            box-shadow: 0 6px 14px rgba(0, 20, 30, 0.12);
         }
 
         .nav-container {
@@ -49,7 +47,6 @@
             padding: 0.5rem 0.8rem;
             border-radius: 40px;
             transition: all 0.2s ease;
-            letter-spacing: 0.3px;
         }
 
         .nav-container a:hover {
@@ -58,7 +55,6 @@
             transform: translateY(-2px);
         }
 
-        /* main containers */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -70,11 +66,10 @@
             margin-bottom: 3rem;
         }
 
-        /* hero / intro card */
         .hero {
             background: linear-gradient(135deg, #eef6fc 0%, #d9e9f5 100%);
             border-radius: 2rem;
-            padding: 2rem 2rem;
+            padding: 2rem;
             margin-bottom: 2rem;
             border-left: 6px solid #0f5b8c;
             box-shadow: 0 8px 20px rgba(0,0,0,0.03);
@@ -106,13 +101,6 @@
             color: #053e5c;
         }
 
-        h3 {
-            font-size: 1.4rem;
-            color: #0e4b70;
-            margin: 0.5rem 0;
-        }
-
-        /* card grid */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -206,13 +194,6 @@
             text-decoration: none;
         }
 
-        hr {
-            margin: 1rem 0;
-            border: 0;
-            height: 2px;
-            background: linear-gradient(to right, #caddf0, transparent);
-        }
-
         footer {
             background: #0a2f44;
             color: #cfe2ef;
@@ -229,20 +210,12 @@
             margin-top: 0.8rem;
         }
 
-        .skill-tag {
+        .skill-tag, .resource-tag {
             background: #ddeeff;
             color: #043c5a;
             padding: 0.4rem 1rem;
             border-radius: 40px;
             font-weight: 500;
-            font-size: 0.85rem;
-        }
-
-        .resource-tag {
-            background: #eef2f6;
-            color: #0e4f73;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
             font-size: 0.85rem;
         }
 
@@ -297,55 +270,50 @@
         <section id="labs">
             <h2>📱 Labs & Foundations</h2>
             <div class="cards-grid">
-                <!-- Lab 1 -->
                 <div class="card">
                     <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/kU2Hd5Qc56w" title="Lab 1 UI Basics" allowfullscreen></iframe></div>
                     <div class="card-content">
                         <div class="card-title">Lab 1 · UI Basics</div>
-                        <div class="card-desc">Jetpack Compose fundamentals & layout structures (Column, Row, Box).</div>
+                        <div class="card-desc">Jetpack Compose fundamentals & layout structures.</div>
                         <div class="reflection"><strong>📝 Reflection:</strong> This lab introduced me to Jetpack Compose basics and building user interfaces. I learned how to structure layouts using Column, Row, and Box, and how Material Design components create a professional look. This foundation was essential for all subsequent labs.</div>
                     </div>
                 </div>
-                <!-- Lab 2 -->
                 <div class="card">
                     <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/Ijeuhda-GTI" title="Lab 2 Interaction" allowfullscreen></iframe></div>
                     <div class="card-content">
                         <div class="card-title">Lab 2 · Interaction & State</div>
-                        <div class="card-desc">User interactions: clicks, text input, remember / mutableStateOf.</div>
+                        <div class="card-desc">User interactions & state management.</div>
                         <div class="reflection"><strong>📝 Reflection:</strong> I learned how to handle user interactions like button clicks and text input. Understanding state management with remember and mutableStateOf was a key milestone. This lab taught me how to make apps responsive to user actions.</div>
                     </div>
                 </div>
-                <!-- Lab 3 -->
                 <div class="card">
                     <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZV3t6e8EKUk" title="Lab 3 Material Design" allowfullscreen></iframe></div>
                     <div class="card-content">
                         <div class="card-title">Lab 3 · Material Design</div>
-                        <div class="card-desc">Theming, colour schemes, typography, shapes, and polished UI.</div>
+                        <div class="card-desc">Theming, color schemes & typography.</div>
                         <div class="reflection"><strong>📝 Reflection:</strong> This lab focused on applying Material Design principles for a consistent and beautiful UI. I worked with color schemes, typography, shapes, and theming to create a visually appealing app that follows design guidelines.</div>
                     </div>
                 </div>
-                <!-- Lab 4 -->
                 <div class="card">
                     <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/qnk7dGhrRtg" title="Lab 4 Navigation Compose" allowfullscreen></iframe></div>
                     <div class="card-content">
                         <div class="card-title">Lab 4 · Navigation</div>
-                        <div class="card-desc">Multi-screen apps: NavHost, routes, passing data between screens.</div>
+                        <div class="card-desc">Multi-screen apps & navigation graphs.</div>
                         <div class="reflection"><strong>📝 Reflection:</strong> Navigation Compose was introduced in this lab, allowing me to create multi-screen apps. I learned about NavHost, routes, and passing data between screens. This was crucial for building StudyFlow's screen flow.</div>
                     </div>
                 </div>
-                <!-- Lab 5 -->
                 <div class="card">
                     <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/K7RIEx3jQME" title="Lab 5 Room Database" allowfullscreen></iframe></div>
                     <div class="card-content">
                         <div class="card-title">Lab 5 · Room Database</div>
-                        <div class="card-desc">Local data persistence, SharedPreferences, offline storage.</div>
+                        <div class="card-desc">Local data persistence & offline storage.</div>
                         <div class="reflection"><strong>📝 Reflection:</strong> I implemented local data persistence using Room Database and SharedPreferences. Learning how to store and retrieve data permanently was challenging but rewarding. This lab taught me the importance of offline-accessible data.</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS section with code buttons -->
+        <!-- PROJECTS section -->
         <section id="projects">
             <h2>🚀 Projects · StudyFlow & StudyFlow Pro</h2>
             <div class="cards-grid">
@@ -359,23 +327,21 @@
                         <a href="https://drive.google.com/drive/folders/1H2mN75trNdItjamoF3zf6u1pCmdd0ijy" target="_blank" rel="noopener noreferrer" class="btn-code">📂 View Code (Google Drive)</a>
                     </div>
                 </div>
-                <!-- Project 2 with updated code link -->
+                <!-- Project 2 with UPDATED YouTube link -->
                 <div class="card">
                     <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/?controls=0" title="Pending video" style="opacity:0.4;" allowfullscreen></iframe>
-                        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:#000000aa; color:white; padding:4px 12px; border-radius: 40px; font-size:0.8rem;">VSR Preview Pending</div>
+                        <iframe src="https://www.youtube.com/embed/cFOKYSbyzgk" title="StudyFlow Pro - API + Sensors + Cloud" allowfullscreen></iframe>
                     </div>
                     <div class="card-content">
                         <div class="card-title">⭐ StudyFlow Pro · API + Sensors + Cloud</div>
                         <div class="card-desc"><strong>Problem:</strong> Students need dictionary API, collaborative tools, study spot finder. Pro expands with Firebase & GPS.</div>
                         <div class="reflection"><strong>✨ Lessons learned:</strong> Integrating Firebase, Retrofit API, and GPS sensor taught me how to connect apps to external services. I learned cloud database management, REST API consumption, and hardware sensor integration. The most valuable lesson was debugging and persisting through technical challenges.</div>
-                        <!-- Updated working Google Drive link for Project 2 -->
                         <a href="https://drive.google.com/drive/folders/1Aej3Ij2Z1sXiVavrTKaSOXgm1RUJo-3v?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-code">📂 View Code (Project 2 · Google Drive)</a>
                     </div>
                 </div>
             </div>
             <div style="margin-top: 0.8rem; background:#eef3fa; border-radius: 1rem; padding: 1rem;">
-                <p><strong>🎥 Project 2 VSR:</strong> YouTube walkthrough link pending — final demo showcases dictionary API, community sharing via Firebase, and GPS-based study spot discovery. Code repository is now fully accessible via the button above.</p>
+                <p><strong>🎥 Project 2 VSR:</strong> Watch the complete demo showcasing dictionary API integration, Firebase community sharing, and GPS-based study spot discovery.</p>
             </div>
         </section>
 
